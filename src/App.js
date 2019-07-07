@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Weather from './components/weather';
+import Grid from '@material-ui/core/Grid';
+import Finance from "./components/finance";
 
 
 class App extends Component {
@@ -20,7 +22,17 @@ class App extends Component {
 
   render() {
     return (
-      <Weather weatherData={this.state.weatherData} />
+      <div>
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <Weather weatherData={this.state.weatherData} />
+          </Grid>
+          <Grid item xs={8}>
+            <Finance />
+          </Grid>
+
+        </Grid>
+      </div>
     );
   }
 }
